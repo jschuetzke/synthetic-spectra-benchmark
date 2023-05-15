@@ -10,8 +10,8 @@ RUN pip install --no-cache-dir wandb
 COPY challenge_dataset/x_train.npy challenge_dataset/x_val.npy challenge_dataset/x_test.npy ./
 COPY challenge_dataset/y_train.npy challenge_dataset/y_val.npy challenge_dataset/y_test.npy ./
 ADD model_implementations/ ./model_implementations/
-COPY further_evaluations/validate_hidden_activation.py ./
-COPY further_evaluations/validate_hidden_activation.sh ./
-RUN chmod +x ./validate_hidden_activation.sh
+COPY training/challenge_modifications.py ./
+COPY training/challenge_modifications.sh ./
+RUN chmod +x ./challenge_modifications.sh
 
-CMD ["./validate_hidden_activation.sh"]
+CMD ["./challenge_modifications.sh"]

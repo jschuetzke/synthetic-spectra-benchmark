@@ -34,7 +34,7 @@ def vary_peaks(position_list, height_list):
     return new_positions, new_heights
 
 def main():   
-    with open('dataset_configs/dataset500.json', 'r') as file:
+    with open('dataset_configs/benchmark.json', 'r') as file:
         config = json.load(file)
     datapoints = config['datapoints']
     n_classes = config['classes']
