@@ -1,0 +1,17 @@
+FROM tensorflow/tensorflow:2.9.1-gpu
+
+WORKDIR app
+
+ARG APIKEY_WANDB
+ENV WANDBKEY=$APIKEY_WANDB
+
+RUN pip install --no-cache-dir wandb
+
+COPY challenge_dataset/x_train.npy challenge_dataset/x_val.npy challenge_dataset/x_test.npy ./
+COPY challenge_dataset/y_train.npy challenge_dataset/y_val.npy challenge_dataset/y_test.npy ./
+ADD model_implementations/ ./model_implementations/
+COPY further_evaluations/validate_modifications.py ./
+COPY further_evaluations/validate_modifications.sh ./
+RUN chmod +x ./validate_modifications.sh
+
+CMD ["./validate_modifications.sh"]
