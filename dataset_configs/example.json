@@ -1,0 +1,1 @@
+{"datapoints": 5000, "boundary": 100, "classes": 2, "min_peaks": 2, "max_peaks": 10, "max_height": 100, "spectra": {"0": {"peak_positions": [391, 413, 546, 1004, 1287, 3036, 3696, 4595], "peak_heights": [0.046, 0.115, 0.874, 0.943, 0.759, 0.126, 1.0, 0.655]}, "1": {"peak_positions": [114, 1932, 4284, 4752, 4845], "peak_heights": [0.387, 0.903, 0.403, 0.597, 1.0]}}}
