@@ -17,7 +17,25 @@ Correspondingly, a synthetic dataset is formed which incorporates the characteri
 
 Then, multiple established neural network architectures are trained on the synthetic spectra and their performance and classification behavior is evaluated in detail.
 
+## Replicating the benchmarks
+
+The models are trained in a Docker container to ensure matching package versions. The images are available in the Github container registry for this repository. An [Weights & Biases](https://wandb.ai) Account is required to track the training and metrics. 
+
+First, pull the relevant image(s):
+```
+docker pull ghcr.io/jschuetzke/synthetic-spectra-benchmark:benchmark
+docker pull ghcr.io/jschuetzke/synthetic-spectra-benchmark:challenge-activation
+docker pull ghcr.io/jschuetzke/synthetic-spectra-benchmark:challenge-modification
+```
+
+To run the benchmark, create a wandb project named **synthetic-benchmark** and copy your W&b API key. Replace the *YOURKEY123* placeholder in the following line with your personal key:
+```
+docker run --rm -e "WANDBKEY=YOURKEY123" ghcr.io/jschuetzke/synthetic-spectra-benchmark:VERSION
+```
+
 ## Usage
+
+This repository can be used to analyze the benchmark data and for the generation of further synthetic spectra datasets.
 
 Clone the repository and install the required Python packages as defined in the requirements.txt file
 
@@ -27,13 +45,17 @@ cd synthetic-spectra-benchmark
 pip install -r requirement.txt
 ```
 
-## Organization of the Repo
+## Generating new datasets
 
-Training data with synthetic spectra is available here:
-https://figshare.com/articles/dataset/Synthetic_spectra_training_data/21581619
+There are two relevant scripts for producing further synthetic spectra datasets to fit unique constraints:
+1. Change the values in the [config_generator](./dataset_config_generator.py)
+2. Modify the number of samples or degree of variation in the [spectra_from_config](./spectra_from_config.py) script
 
-Test data for benchmarking:
-https://figshare.com/articles/dataset/Synthetic_spectra_test_data/21601749
+
+## External ressources
+
+The exact training, validatio, and test samples for the general and challenge benchmark, as well as the weights of the trained models, are available here:
+https://figshare.com/articles/dataset/Synthetic_spectra_challenging_dataset/22188433
 
 Documentation of the training runs can be found here:
 https://wandb.ai/jschuetzke/synthetic-benchmark/overview
