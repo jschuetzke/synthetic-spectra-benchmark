@@ -54,25 +54,17 @@ jobs:
         run: |
           python spectra_from_config.py
 
-      #- name: Extract metadata (tags, labels) for Docker
-      #  id: meta
-      #  uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
-      #  with:
-      #    images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4
         with:
           context: .
           file: training/benchmark.dockerfile
-          push: false
-
-      #- name: Build and push Docker image
-      #  uses: docker/build-push-action@v4
-      #  with:
-      #    context: .
-      #    push: true
-      #    tags: #${{ steps.meta.outputs.tags }}
-      #    labels: #${{ steps.meta.outputs.labels }}
-          
-    
+          push: true
+          tags: challenge
+          labels: ${{ steps.meta.outputs.labels }}
