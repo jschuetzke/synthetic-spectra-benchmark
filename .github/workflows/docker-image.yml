@@ -66,5 +66,5 @@ jobs:
           context: .
           file: training/benchmark.dockerfile
           push: true
-          tags: jschuetzke/synthetic-spectra-benchmark:benchmark
+          tags: ghcr.io/jschuetzke/synthetic-spectra-benchmark:benchmark
           labels: ${{ steps.meta.outputs.labels }}
