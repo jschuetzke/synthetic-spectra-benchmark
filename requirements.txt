@@ -1,0 +1,6 @@
+tensorflow==2.9.1
+scipy
+matplotlib
+seaborn
+wandb
+tqdm
