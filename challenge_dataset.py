@@ -26,7 +26,7 @@ rng = np.random.default_rng(2022)
 # PARAMETERS
 n_datapoints = 5000
 boundary = 100
-n_classes = 9
+n_classes = 27
 min_peaks = 2
 max_peaks = 10
 max_height = 100
@@ -44,16 +44,16 @@ def generate_config():
         # 9 classes for minor peak detection
         # triplet 1
         0 : {"peak_positions" : [700, 3000], "peak_heights" : [0.7, 1.0]},
-        1 : {"peak_positions" : [700, 1800, 3000], "peak_heights" : [0.7, 0.045, 1.0]},
-        2 : {"peak_positions" : [700, 3000, 4200], "peak_heights" : [0.7, 1.0, 0.045]},
+        1 : {"peak_positions" : [700, 1800, 3000], "peak_heights" : [0.7, 0.035, 1.0]},
+        2 : {"peak_positions" : [700, 3000, 4200], "peak_heights" : [0.7, 1.0, 0.035]},
         # triplet 2
         3 : {"peak_positions" : [920, 1115], "peak_heights" : [1.0, 0.4]},
-        4 : {"peak_positions" : [923, 1112, 1500], "peak_heights" : [1.0, 0.4, 0.045]},
-        5 : {"peak_positions" : [918, 1116, 1630], "peak_heights" : [1.0, 0.4, 0.045]},
+        4 : {"peak_positions" : [923, 1112, 1500], "peak_heights" : [1.0, 0.4, 0.035]},
+        5 : {"peak_positions" : [918, 1116, 1630], "peak_heights" : [1.0, 0.4, 0.035]},
         # triplet 3
         6 : {"peak_positions" : [500, 2100], "peak_heights" : [0.9, 1.0]},
-        7 : {"peak_positions" : [500, 2100, 2260], "peak_heights" : [0.9, 1.0, 0.045]},
-        8 : {"peak_positions" : [500, 2100, 2260, 2750], "peak_heights" : [0.9, 1.0, 0.045, 0.045]},
+        7 : {"peak_positions" : [500, 2100, 2260], "peak_heights" : [0.9, 1.0, 0.035]},
+        8 : {"peak_positions" : [500, 2100, 2260, 2750], "peak_heights" : [0.9, 1.0, 0.035, 0.035]},
 
         # 9 classes for position overlap
         # triplet 4
