@@ -50,8 +50,8 @@ for model_name in model_list:
         tf.keras.utils.set_random_seed(seed)
         model.fit(xt, yt, batch_size=batch_size, epochs=500, verbose=2, 
                   callbacks=callbacks, validation_data=(xv, yv), shuffle=True)
-        tf.keras.models.save_model(model, f'/model_weights/{model_name}-{seed}.h5',
-                                   include_optimizer=True, save_format='h5')
+        #tf.keras.models.save_model(model, f'/model_weights/{model_name}-{seed}.h5',
+        #                           include_optimizer=True, save_format='h5')
         pred = np.argmax(model.predict(xtest), axis=1)
         misclassifications = np.where(pred != ytest)[0].size
         wandb.log({'wrong_class':misclassifications})
