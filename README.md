@@ -6,6 +6,10 @@ While all models achieved over 98\% accuracy on the synthetic dataset, misclassi
 We found that non-linear activation functions, specifically ReLU in the fully-connected layers, were crucial for distinguishing between these classes, while adding more sophisticated components, such as residual blocks or normalization layers, provided no performance benefit.
 Based on these findings, we summarize key design principles for neural networks in spectroscopic data classification and publicly share all scripts used in this study.
 
+## Manuscript
+
+The manuscript is published in *npj Computational Materials* and can be found [here](https://www.nature.com/articles/s41524-023-01055-y).
+
 ## Concept
 Spectroscopic and diffraction signals are visually similar with characteristic intensity peaks when zoomed to matching segment lengths.
 
@@ -54,7 +58,7 @@ There are two relevant scripts for producing further synthetic spectra datasets 
 
 ## External ressources
 
-The exact training, validatio, and test samples for the general and challenge benchmark, as well as the weights of the trained models, are available here:
+The exact training, validation, and test samples for the general and challenge benchmark, as well as the weights of the trained models, are available here:
 https://figshare.com/articles/dataset/Synthetic_spectra_challenging_dataset/22188433
 
 Documentation of the training runs can be found here:
